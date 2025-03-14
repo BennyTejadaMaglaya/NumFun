@@ -64,5 +64,29 @@ namespace NumFun.Tests
             // Assert
             Assert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// UseCase5 Test for DivideByZeroException
+        /// </summary>
+        [TestMethod()]
+        public void DivisionTestCase5()
+        {
+            // Arrange
+            double Numerator = 1;
+            double Denominator = 0;
+
+            // Act
+            try
+            {
+                var actual = NumberFun.Division(Numerator, Denominator);
+            }
+            catch (DivideByZeroException)
+            {
+                return;
+            }
+
+            // Assert
+            Assert.Fail();
+        }
     }
 }
