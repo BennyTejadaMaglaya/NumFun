@@ -69,6 +69,7 @@ namespace NumFun.Tests
         /// UseCase5 Test for DivideByZeroException
         /// </summary>
         [TestMethod()]
+        [ExpectedException(typeof(DivideByZeroException))]
         public void DivisionTestCase5()
         {
             // Arrange
@@ -82,7 +83,8 @@ namespace NumFun.Tests
             }
             catch (DivideByZeroException)
             {
-                return;
+                //return;
+                throw;
             }
 
             // Assert
